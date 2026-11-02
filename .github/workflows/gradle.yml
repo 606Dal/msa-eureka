@@ -45,5 +45,5 @@ jobs:
               --network spharos \
               -p 8761:8761 \
               "${{ secrets.DOKER_USERNAME }}/eureka:${{ github.run_number }}"
-            sudo docker image prune -a 
+            sudo docker image prune -a -f
 
