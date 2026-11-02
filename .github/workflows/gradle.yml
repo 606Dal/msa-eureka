@@ -25,7 +25,7 @@ jobs:
 
       - name: docker build & docker hub push
         run: |
-          echo "${{ secrets.DOCKER_PASSWORD }} | docker login -u "${{ secrets.DOKER_USERNAME }}" --password-stdin
+          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOKER_USERNAME }}" --password-stdin
           docker build -t "${{ secrets.DOKER_USERNAME }}/eureka:${{ github.run_number }}" .
           docker push "${{ secrets.DOKER_USERNAME }}/eureka:${{ github.run_number }}"
 
