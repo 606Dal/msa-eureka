@@ -39,7 +39,7 @@ jobs:
             echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOKER_USERNAME }}" --password-stdin
             sudo docker pull "${{ secrets.DOKER_USERNAME }}/eureka:${{ github.run_number }}"
             sudo docker stop eureka || true
-            sudo docker rm eureaka || true
+            sudo docker rm eureka || true
             sudo docker run -d \
               --name eureka \
               --network spharos \
